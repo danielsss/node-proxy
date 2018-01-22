@@ -4,7 +4,7 @@ A reverse proxy build on Node.js
 # Dependancies
 Node Version >= v8.\*.\*
 
-# Download & Install
+# Download & Installation
 - Using source code
 ```git clone https://github.com/danielsss/node-proxy.git```
 
@@ -16,7 +16,7 @@ Node Version >= v8.\*.\*
 ```javascript
 
   Proxy
-    ✓ `It should be an query and returns an Object{url, method, status, headers}` (45ms)
+    ✓ It should be an query and returns an Object{url, method, status, headers} (45ms)
 
 
   1 passing (67ms)
