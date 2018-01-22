@@ -12,11 +12,17 @@ const options = {
 };
 const app = new App(options);
 app.start();
+app.response.setHeader("X-Server-Ts", Date.now());
+app.request.setHeader("X-Client-Ts", Date.now());
 
 
 function startBackendServers(port, hostname){
     let server = http.createServer((req, res)=>{
-        let info = {status: "ok"};
+        let info = {
+            status: "ok", hostname:`${hostname}:${port}`,
+            url: req.url, method: req.method,
+            headers: req.headers,
+        };
         res.writeHead(200, {"Content-type": "application/json"});
         res.end(JSON.stringify(info));
     });
